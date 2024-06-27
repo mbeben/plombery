@@ -51,6 +51,8 @@ class _Orchestrator:
                 coalesce=True,
                 # Jobs will be run even if they arrive 1 min late
                 misfire_grace_time=timedelta(minutes=1).seconds,
+                # per pipeline, max instances
+                max_instances=pipeline.max_instances,
             )
 
     def get_pipeline(self, pipeline_id: str):

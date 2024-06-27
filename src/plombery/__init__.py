@@ -74,6 +74,7 @@ def register_pipeline(
     description: Optional[str] = None,
     params: Optional[Type[BaseModel]] = None,
     triggers: Optional[List[Trigger]] = None,
+    max_instances: Optional[int] = None,
 ):
     pipeline = Pipeline(
         id=id,
@@ -82,6 +83,7 @@ def register_pipeline(
         description=description,
         params=params,
         triggers=triggers or [],
+        max_instances=max_instances,
     )
 
     _app.register_pipeline(pipeline)
